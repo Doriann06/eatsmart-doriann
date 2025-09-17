@@ -1,8 +1,6 @@
 # **Projet : EatSmart**
 
-**Etudiants :** (Nom des étudiants)
-
-Doriann Bachelt
+**Etudiants :** Doriann Bachelet
 
 ### **1. Description du projet**
 
