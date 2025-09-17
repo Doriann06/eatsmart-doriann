@@ -6,7 +6,7 @@
 
 ### **1. Description du projet**
 
-(Complétez ici avec la description du projet présentée en classe.)
+Ce projet est un site qui permet à des client de pouvoir passer des commandes qui seront reçus par des restaurateur
 
 <img src="./assets/img/Schema Architecture Eatsmart.png">
 
@@ -17,18 +17,18 @@
 #### **3.1 Frontend (eatSmartFront)**
 
 - **Fonctionnalité 1 :**  
-  (Décrivez ici la première fonctionnalité du front-office.)
+  Afficher le menu
   
 - **Fonctionnalité 2 :**  
-  (Décrivez ici la deuxième fonctionnalité du front-office.)
+  Enoyer la commande au Resteaurateur 
   
 #### **3.2 Backend (eatSmartBack)**
 
 - **Fonctionnalité 1 :**  
-  (Décrivez ici la première fonctionnalité du back-office.)
+  Recevoir les commandes des clients
   
 - **Fonctionnalité 2 :**  
-  (Décrivez ici la deuxième fonctionnalité du back-office.)
+  Avoir un hisotrique des commandes
 
 ---
 
