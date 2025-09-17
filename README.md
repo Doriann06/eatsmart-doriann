@@ -34,8 +34,8 @@ Ce projet est un site qui permet aux clients de pouvoir passer des commandes qui
 
 ### **4. Technologies utilisées**
 
-- **Frontend :** (Technologies prévues)
-- **Backend :** (Technologies prévues)
-- **Base de données :** (Technologies prévues)
+- **Frontend :** PHP
+- **Backend :** HTML CSS
+- **Base de données :** MySQL
 
 ---
