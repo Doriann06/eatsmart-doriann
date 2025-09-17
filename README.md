@@ -2,9 +2,13 @@
 
 **Etudiants :** Doriann Bachelet
 
+---
+
 ### **1. Description du projet**
 
 (Complétez ici avec la description du projet présentée en classe.)
+
+<img src="./assets/img/Schema Architecture Eatsmart.png">
 
 ---
 
