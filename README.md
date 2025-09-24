@@ -9,7 +9,7 @@
 Ce projet est un site qui permet aux clients de pouvoir passer des commandes qui seront reçus par des restaurateur
 
 <img src="./assets/img/Schema Architecture Eatsmart.png">
-<img src="./assets/img/Schema Architecture MDP.png">
+<img src="./assets/img/Schema Architecture MDP.PNG">
 
 ---
 
