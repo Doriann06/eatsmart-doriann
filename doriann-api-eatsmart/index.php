@@ -13,7 +13,11 @@ if (empty($_GET['page'])){
     $url= explode("/",$_GET['page']);
     switch($url[0]){
         case 'articles':
-            if (isset($url[1])){
+            if (isset($url[2])){
+                if ($url[2]=="commandes"){
+                    echo $articleController->getArticleByIdCommande($url[1]);
+                }
+            }else if (isset($url[1])){
                 echo $articleController->getArticleById($url[1]);
             }else{
                 echo $articleController->getAllArticles();
