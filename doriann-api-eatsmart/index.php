@@ -21,7 +21,11 @@ if (empty($_GET['page'])){
            
             break;
             case 'categories':
-            if (isset($url[1])){
+                if (isset($url[2])){
+                    if ($url[2]=="articles"){
+                        echo $categorieController->getCategorieByIdArticle($url[1]);
+                    }
+                }else if (isset($url[1])){
                 echo $categorieController->getCategorieById($url[1]);
             }else{
                 echo $categorieController->getAllCategories();

@@ -36,6 +36,17 @@ class CategorieModel
         $categorie= $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $categorie;
     }
+    public function getDBCategorieByIdArticle($idCategorie){
+        $req="
+            SELECT * FROM article
+            WHERE idCategorie=:id_Categorie
+            ";
+        $stmt = $this->pdo->prepare($req);
+        $stmt->bindValue(":id_Categorie",$idCategorie, PDO::PARAM_INT);
+        $stmt->execute();
+        $voitureByCategorie= $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $voitureByCategorie;
+    }
 
 
 }
