@@ -25,6 +25,17 @@ class ArticleModel
         $stmt = $this->pdo->query("SELECT * FROM Article");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getDBArticleById ($idArticle){
+        $req="
+            SELECT * FROM Article 
+            WHERE idArticle= :idArticle
+            ";
+        $stmt = $this->pdo->prepare($req);
+        $stmt->bindValue(":idArticle",$idArticle, PDO::PARAM_INT);
+        $stmt->execute();
+        $article= $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $article;
+    }
 
 }
 

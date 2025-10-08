@@ -14,7 +14,7 @@ if (empty($_GET['page'])){
     switch($url[0]){
         case 'articles':
             if (isset($url[1])){
-                echo "Afficher les information de l'article: ".$url[1];
+                echo $articleController->getArticleById($url[1]);
             }else{
                 echo $articleController->getAllArticles();
             }
@@ -22,7 +22,7 @@ if (empty($_GET['page'])){
             break;
             case 'categories':
             if (isset($url[1])){
-                echo "Afficher les information de la categorie: ".$url[1];
+                echo $categorieController->getCategorieById($url[1]);
             }else{
                 echo $categorieController->getAllCategories();
             }
@@ -30,7 +30,7 @@ if (empty($_GET['page'])){
             break;
             case 'commandes':
             if (isset($url[1])){
-                echo "Afficher les information de la commande : ".$url[1];
+                echo $commandeController->getCommandeById($url[1]);
             }else{
                 echo $commandeController->getAllCommandes();
             }
