@@ -36,6 +36,19 @@ class CommandeModel
         $commande= $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $commande;
     }
+    public function getDBCommaneByIdArticle($idCommande){
+        $req="
+            SELECT * FROM assosiation_artcicle_commande
+            INNER JOIN article ON article.idArticle=assosiation_artcicle_commande.idArticle
+            INNER JOIN commande ON commande.idCommande=assosiation_artcicle_commande.idCommande
+            WHERE commande.idCommande=:id_Commande
+            ";
+        $stmt = $this->pdo->prepare($req);
+        $stmt->bindValue(":id_Commande",$idCommande, PDO::PARAM_INT);
+        $stmt->execute();
+        $articleByCommande= $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $articleByCommande;
+    }
 
 
 }

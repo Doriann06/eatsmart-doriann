@@ -43,8 +43,10 @@ Voici les différents endpoints de l'API :
 - `GET /categories` → Afficher la liste des catégories
 - `GET/categories/{id}` → Afficher la catégorie avec l'id égal à {id}
 - `GET/commandes` → Afficher la liste des commandes
-- `GET/commandes/{id} → Afficher la commande avec l'id égal à {id}
-
+- `GET/commandes/{id}` → Afficher la commande avec l'id égal à {id}
+- `GET /categories/{id}/articles` → Affiche les articles appartenant a la categorie avec l'id égal à {id}
+- `GET /articles/{id}/commandes` → Affiche les commandes posedant l'article avec l'id égal à {id}
+- `GET /commandes/{id}/articles`  → Affiche les article appartenant a la commande avec l'id égal à {id}
 ### **4. Technologies utilisées**
 
 - **Frontend :** PHP

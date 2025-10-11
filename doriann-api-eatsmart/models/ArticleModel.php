@@ -46,8 +46,8 @@ class ArticleModel
         $stmt = $this->pdo->prepare($req);
         $stmt->bindValue(":id_Article",$idArticle, PDO::PARAM_INT);
         $stmt->execute();
-        $voitureByArticle= $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $voitureByArticle;
+        $commandeByArticle= $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $commandeByArticle;
     }
 
 }

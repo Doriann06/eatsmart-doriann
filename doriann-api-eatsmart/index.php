@@ -37,7 +37,11 @@ if (empty($_GET['page'])){
            
             break;
             case 'commandes':
-            if (isset($url[1])){
+                 if (isset($url[2])){
+                if ($url[2]=="articles"){
+                    echo $commandeController->getCommandeByIdArticle($url[1]);
+                }
+            }else if (isset($url[1])){
                 echo $commandeController->getCommandeById($url[1]);
             }else{
                 echo $commandeController->getAllCommandes();

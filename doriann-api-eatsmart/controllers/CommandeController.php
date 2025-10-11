@@ -26,6 +26,11 @@ class CommandeController
             $lignesCommande =$this->model->getDBCommandeById($idCommande);
             echo json_encode($lignesCommande);
         }
+        public function getCommandeByIdArticle($idCommande){
+            $lignesCommandeByIdArticle=$this->model->getDBCommaneByIdArticle($idCommande);
+            echo json_encode($lignesCommandeByIdArticle);
+
+        }
     }
 
     
