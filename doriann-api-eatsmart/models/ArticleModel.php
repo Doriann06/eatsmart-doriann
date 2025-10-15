@@ -62,8 +62,25 @@ class ArticleModel
 
 
             $stmt->execute();
-            $chauffeur=$this->getDBArticleById($data['idArticle']);
-        return $chauffeur;
+            $article=$this->getDBArticleById($data['idArticle']);
+        return $article;
+    }
+    public function updateDBArticle($id,$data){
+        $req=" UPDATE article
+            SET idArticle=:idArticle,nomArticle=:nomArticle,ingredientsArticle=:ingredientsArticle,quantiteArticle=:quantiteArticle,PrixArticle=:PrixArticle,idCategorie=:idCategorie
+            WHERE idArticle=:id";
+        $stmt=$this->pdo->prepare($req);
+
+            $stmt->bindParam(":idArticle",$data['idArticle'],PDO::PARAM_INT);
+            $stmt->bindParam(":nomArticle",$data['nomArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":ingredientsArticle",$data['ingredientsArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":quantiteArticle",$data['quantiteArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":PrixArticle",$data['PrixArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":idCategorie",$data['idCategorie'],PDO::PARAM_INT);
+            $stmt->bindParam(":id",$id,PDO::PARAM_INT);
+        $stmt->execute();
+        //Verifie si une ligne a été modifiée
+        return $stmt->rowCount()>0;
     }
 
 }

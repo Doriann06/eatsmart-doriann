@@ -30,6 +30,14 @@ if (empty($_GET['page'])){
                     $data=json_decode(file_get_contents("php://input"),true);
                     $articleController->createArticle($data);
                     break;
+                case "PUT":
+                    if (isset($url[1])){
+                        $data=json_decode(file_get_contents("php://input"),true);
+                        $articleController->updateArticle($url[1],$data);
+                    } else{
+                        http_response_code(400);
+                        echo json_encode(["message"=>"ID du Article manquant dans l'URL"]);
+                    }
             }
             break;
             case 'categories':
