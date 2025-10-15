@@ -32,6 +32,11 @@ class ArticleController
             echo json_encode($lignesArticleByIdCommande);
 
         }
+        public function createArticle($data){
+            $lignesArticle = $this->model->createDBArticle($data);
+            http_response_code(201);
+            echo json_encode($lignesArticle);
+        }
     }
 
     

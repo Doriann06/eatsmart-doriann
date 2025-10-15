@@ -11,18 +11,26 @@ if (empty($_GET['page'])){
     echo "La page n'existe pas";
 }else{
     $url= explode("/",$_GET['page']);
+    $method= $_SERVER["REQUEST_METHOD"];
     switch($url[0]){
         case 'articles':
-            if (isset($url[2])){
-                if ($url[2]=="commandes"){
-                    echo $articleController->getArticleByIdCommande($url[1]);
-                }
-            }else if (isset($url[1])){
-                echo $articleController->getArticleById($url[1]);
-            }else{
-                echo $articleController->getAllArticles();
+            switch($method){
+                case "GET":
+                    if (isset($url[2])){
+                        if ($url[2]=="commandes"){
+                            echo $articleController->getArticleByIdCommande($url[1]);
+                        }
+                    }else if (isset($url[1])){
+                        echo $articleController->getArticleById($url[1]);
+                    }else{
+                        echo $articleController->getAllArticles();
+                    }
+                break;
+                case "POST":
+                    $data=json_decode(file_get_contents("php://input"),true);
+                    $articleController->createArticle($data);
+                    break;
             }
-           
             break;
             case 'categories':
                 if (isset($url[2])){

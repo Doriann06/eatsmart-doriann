@@ -49,6 +49,22 @@ class ArticleModel
         $commandeByArticle= $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $commandeByArticle;
     }
+    public function createDBArticle($data){
+        $req ="INSERT INTO article (idArticle,nomArticle,ingredientsArticle,quantiteArticle,PrixArticle,idCategorie)
+                VALUES (:idArticle,:nomArticle,:ingredientsArticle,:quantiteArticle,:PrixArticle,:idCategorie)";
+            $stmt =$this->pdo->prepare($req);
+            $stmt->bindParam(":idArticle",$data['idArticle'],PDO::PARAM_INT);
+            $stmt->bindParam(":nomArticle",$data['nomArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":ingredientsArticle",$data['ingredientsArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":quantiteArticle",$data['quantiteArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":PrixArticle",$data['PrixArticle'],PDO::PARAM_STR);
+            $stmt->bindParam(":idCategorie",$data['idCategorie'],PDO::PARAM_INT);
+
+
+            $stmt->execute();
+            $chauffeur=$this->getDBArticleById($data['idArticle']);
+        return $chauffeur;
+    }
 
 }
 
