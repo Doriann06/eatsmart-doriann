@@ -82,6 +82,16 @@ class ArticleModel
         //Verifie si une ligne a été modifiée
         return $stmt->rowCount()>0;
     }
+    public function deleteDBArticle($id){
+        $req=" DELETE FROM article
+                WHERE idArticle=:id";
+        $stmt=$this->pdo->prepare($req);
+        $stmt->bindParam(":id",$id,PDO::PARAM_INT);
+
+        $stmt->execute();
+        //Verifie si une ligne a été modifiée
+        return $stmt->rowCount()>0;
+    }
 
 }
 

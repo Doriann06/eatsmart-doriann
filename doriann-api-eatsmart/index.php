@@ -38,6 +38,14 @@ if (empty($_GET['page'])){
                         http_response_code(400);
                         echo json_encode(["message"=>"ID du Article manquant dans l'URL"]);
                     }
+                    case "DELETE":
+                        if (isset($url[1])){
+                            $articleController->deleteArticle($url[1]);
+                        } else{
+                            http_response_code(400);
+                            echo json_encode(["message"=>"ID du article manquant dans l'URL"]);
+                        }
+                        break;
             }
             break;
             case 'categories':
