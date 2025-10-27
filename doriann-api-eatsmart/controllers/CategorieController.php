@@ -31,6 +31,31 @@ class CategorieController
             echo json_encode($lignesCategorieByIdArticle);
 
         }
+        public function createCategorie($data){
+            $lignesCategorie = $this->model->createDBCategorie($data);
+            http_response_code(201);
+            echo json_encode($lignesCategorie);
+        }
+        public function updateCategorie($id,$data){
+            $success = $this->model->updateDBCategorie($id,$data);
+            if ($success){
+                http_response_code(204);
+            } else{
+                http_response_code(404);
+                echo json_encode(["message"=> "categorie non trouvé ou non modifiée"]);
+            }
+            
+        }
+        public function deleteCategorie($id){
+            $success = $this->model->deleteDBCategorie($id);
+            if ($success){
+                http_response_code(204);
+            } else{
+                http_response_code(404);
+                echo json_encode(["message"=> "categorie introuvable"]);
+            }
+            
+        }
     }
 
     

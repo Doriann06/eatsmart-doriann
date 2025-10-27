@@ -38,6 +38,7 @@ if (empty($_GET['page'])){
                         http_response_code(400);
                         echo json_encode(["message"=>"ID du Article manquant dans l'URL"]);
                     }
+                    break;
                     case "DELETE":
                         if (isset($url[1])){
                             $articleController->deleteArticle($url[1]);
@@ -48,16 +49,41 @@ if (empty($_GET['page'])){
                         break;
             }
             break;
-            case 'categories':
+        case 'categories':
+            switch($method){
+            case "GET":
                 if (isset($url[2])){
                     if ($url[2]=="articles"){
                         echo $categorieController->getCategorieByIdArticle($url[1]);
                     }
                 }else if (isset($url[1])){
-                echo $categorieController->getCategorieById($url[1]);
-            }else{
-                echo $categorieController->getAllCategories();
-            }
+                    echo $categorieController->getCategorieById($url[1]);
+                }else{
+                    echo $categorieController->getAllCategories();
+                }
+                break;
+                case "POST":
+                    $data=json_decode(file_get_contents("php://input"),true);
+                    $categorieController->createCategorie($data);
+                    break;
+                case "PUT":
+                    if (isset($url[1])){
+                        $data=json_decode(file_get_contents("php://input"),true);
+                        $categorieController->updateCategorie($url[1],$data);
+                    } else{
+                        http_response_code(400);
+                        echo json_encode(["message"=>"ID du Categorie manquant dans l'URL"]);
+                    }
+                    break;
+                    case "DELETE":
+                        if (isset($url[1])){
+                            $categorieController->deleteCategorie($url[1]);
+                        } else{
+                            http_response_code(400);
+                            echo json_encode(["message"=>"ID du categorie manquant dans l'URL"]);
+                        }
+                        break;
+           }
            
             break;
             case 'commandes':

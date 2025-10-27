@@ -47,6 +47,40 @@ class CategorieModel
         $voitureByCategorie= $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $voitureByCategorie;
     }
+    public function createDBCategorie($data){
+        $req ="INSERT INTO categorie (idCategorie,nomCategorie)
+                VALUES (:idCategorie,:nomCategorie)";
+            $stmt =$this->pdo->prepare($req);
+            $stmt->bindParam(":idCategorie",$data['idCategorie'],PDO::PARAM_INT);
+            $stmt->bindParam(":nomCategorie",$data['nomCategorie'],PDO::PARAM_STR);
+
+            $stmt->execute();
+            $categorie=$this->getDBCategorieById($data['idCategorie']);
+        return $categorie;
+    }
+    public function updateDBCategorie($id,$data){
+        $req=" UPDATE categorie
+            SET idCategorie=:idCategorie,nomCategorie=:nomCategorie
+            WHERE idCategorie=:id";
+        $stmt=$this->pdo->prepare($req);
+
+            $stmt->bindParam(":idCategorie",$data['idCategorie'],PDO::PARAM_INT);
+            $stmt->bindParam(":nomCategorie",$data['nomCategorie'],PDO::PARAM_STR);
+            $stmt->bindParam(":id",$id,PDO::PARAM_INT);
+        $stmt->execute();
+        //Verifie si une ligne a été modifiée
+        return $stmt->rowCount()>0;
+    }
+    public function deleteDBCategorie($id){
+        $req=" DELETE FROM categorie
+                WHERE idCategorie=:id";
+        $stmt=$this->pdo->prepare($req);
+        $stmt->bindParam(":id",$id,PDO::PARAM_INT);
+
+        $stmt->execute();
+        //Verifie si une ligne a été modifiée
+        return $stmt->rowCount()>0;
+    }
 
 
 }
