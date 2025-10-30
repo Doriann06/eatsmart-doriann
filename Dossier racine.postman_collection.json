@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "807c3284-dd98-499f-83b5-66c12dcbf8fc",
+		"name": "Dossier racine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48519336",
+		"_collection_link": "https://doriann-bak-9693695.postman.co/workspace/doriann-api-eatsmart~cb36386d-055f-4a17-af95-5c12b93b86ec/collection/48519336-807c3284-dd98-499f-83b5-66c12dcbf8fc?action=share&source=collection_link&creator=48519336"
+	},
+	"item": [
+		{
+			"name": "articles",
+			"item": [
+				{
+					"name": "getAllArticles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getArticlesById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/articles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"articles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getArticleByIdCommande",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/articles/1/commandes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"articles",
+								"1",
+								"commandes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createArticle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idArticle\": 36,\r\n        \"nomArticle\": \"TEST\",\r\n        \"ingredientsArticle\": \"test\",\r\n        \"quantiteArticle\": null,\r\n        \"PrixArticle\": \"7.50\",\r\n        \"idCategorie\": 5\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateArticle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idArticle\": 36,\r\n        \"nomArticle\": \"TEST2\",\r\n        \"ingredientsArticle\": \"test\",\r\n        \"quantiteArticle\": null,\r\n        \"PrixArticle\": \"7.50\",\r\n        \"idCategorie\": 5\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/articles/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"articles",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteArticle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/articles/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"articles",
+								"36"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "getAllCategorie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategorieById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/categories/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"categories",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategorieByIdArticle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/categories/2/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"categories",
+								"2",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCategorie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idCategorie\": 6,\r\n        \"nomCategorie\": \"TEST\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategorie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idCategorie\": 6,\r\n        \"nomCategorie\": \"TEST2\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/categories/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"categories",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategorie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/categories/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"categories",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "commandes",
+			"item": [
+				{
+					"name": "GetCommandeByIdArticles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/commandes/2/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"commandes",
+								"2",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCommandes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/commandes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"commandes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCommandeById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/commandes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"commandes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCommande",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCommande\": 10,\r\n  \"dateCommande\": \"2024-10-25 00:00:00\",\r\n  \"prixTotal\": 10,\r\n  \"estPret\": \"en cours\",\r\n  \"articles\": [\r\n    {\r\n      \"idArticle\": 1,\r\n      \"quantiteArticle\": 10\r\n    },\r\n    {\r\n      \"idArticle\": 2,\r\n      \"quantiteArticle\": 5\r\n    },\r\n    {\r\n      \"idArticle\": 3,\r\n      \"quantiteArticle\": 2\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost/eatsmart-doriann/doriann-api-eatsmart/commandes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"eatsmart-doriann",
+								"doriann-api-eatsmart",
+								"commandes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
