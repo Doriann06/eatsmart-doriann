@@ -31,6 +31,11 @@ class CommandeController
             echo json_encode($lignesCommandeByIdArticle);
 
         }
+        public function createCommande($data){
+            $lignesCommande = $this->model->createDBCommande($data);
+            http_response_code(201);
+            echo json_encode($lignesCommande);
+        }
     }
 
     

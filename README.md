@@ -46,7 +46,14 @@ Voici les différents endpoints de l'API :
 - `GET/commandes/{id}` → Afficher la commande avec l'id égal à {id}
 - `GET /categories/{id}/articles` → Affiche les articles appartenant a la categorie avec l'id égal à {id}
 - `GET /articles/{id}/commandes` → Affiche les commandes posedant l'article avec l'id égal à {id}
-- `GET /commandes/{id}/articles`  → Affiche les article appartenant a la commande avec l'id égal à {id}
+- `GET /commandes/{id}/articles`  → Affiche les articles appartenant a la commande avec l'id égal à {id}
+- `POST /articles`→ Crée un nouvelle article à la BDD
+- `PUT /articles/{id}`→ Modifie l'article avec l'id égal à {id}
+- `DELETE /articles/{id}`→ Supprime l'article avec l'id égal à {id}
+- `POST /categories`→ Crée une nouvelle categorie à la BDD
+- `PUT /categories/{id}`→ Modifie la catégorie avec l'id égal à {id}
+- `DELETE /categories/{id}`→ Supprime la catégorie avec l'id égal à {id}
+- `POST /commandes`→ Crée une nouvelle commande à la BDD
 ### **4. Technologies utilisées**
 
 - **Frontend :** PHP
