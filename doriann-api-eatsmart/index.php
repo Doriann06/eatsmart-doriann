@@ -2,6 +2,7 @@
 require_once "./controllers/ArticleController.php";
 require_once "./controllers/CategorieController.php";
 require_once "./controllers/CommandeController.php";
+header("Access-Control-Allow-Origin: *");
 $articleController= new ArticleController();
 $categorieController= new CategorieController();
 $commandeController= new CommandeController();
@@ -109,5 +110,6 @@ if (empty($_GET['page'])){
         echo "La page n'existe pas";
     }
 }
+
 
 ?>
